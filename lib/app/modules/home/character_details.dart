@@ -16,7 +16,7 @@ class ModalCharacterDetails {
   }
 
   Widget _body(BuildContext context, Character article) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.85,
       child: SingleChildScrollView(
         child: Column(
@@ -73,10 +73,18 @@ class ModalCharacterDetails {
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.justify,
                   ),
-                  Text(
-                    article.comics[0],
-                    style: const TextStyle(fontSize: 12),
-                    textAlign: TextAlign.justify,
+                  ListView.builder(
+                    itemCount: article.comics.length,
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                       title: Text(
+                          article.comics[index],
+                          style: const TextStyle(fontSize: 12),
+                       ),
+                     );
+                    },
                   ),
 
                   const SizedBox(
@@ -88,10 +96,18 @@ class ModalCharacterDetails {
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.justify,
                   ),
-                  Text(
-                    article.series[0],
-                    style: const TextStyle(fontSize: 12),
-                    textAlign: TextAlign.justify,
+                  ListView.builder(
+                    itemCount: article.series.length,
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                        title: Text(
+                          article.series[index],
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
