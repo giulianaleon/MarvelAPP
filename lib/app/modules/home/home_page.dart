@@ -13,7 +13,6 @@ class CharactersPage extends StatefulWidget {
 
 class _CharactersPageState extends State<CharactersPage> {
   final CharacterStore _store = CharacterStore();
-  final MarvelApi _marvelApi = MarvelApi();
   ModalCharacterDetails modal = ModalCharacterDetails();
 
   @override
@@ -31,15 +30,6 @@ class _CharactersPageState extends State<CharactersPage> {
           'MARVEL',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            color: Colors.black,
-            onPressed: () {
-            },
-            tooltip: 'Search',
-          ),
-        ],
       ),
       body: Observer(
         builder: (_) {

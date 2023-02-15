@@ -17,56 +17,58 @@ class ModalCharacterDetails {
 
   Widget _body(BuildContext context, Character article) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.90,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _headerCharacter(context, article),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  article.name,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF05A8F3),
+      height: MediaQuery.of(context).size.height * 0.85,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _headerCharacter(context, article),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const SizedBox(
+                    height: 10,
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: <Widget>[
-                    Text(
-                      article.name,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.black.withOpacity(0.4),
+                  Text(
+                    article.name,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF05A8F3),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        article.name,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: Colors.black.withOpacity(0.4),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                  ],
-                ),
-                const Divider(
-                  height: 20,
-                  thickness: 1,
-                ),
-                Text(
-                  article.description,
-                  style: const TextStyle(fontSize: 18),
-                  textAlign: TextAlign.justify,
-                )
-              ],
+                      const SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  const Divider(
+                    height: 20,
+                    thickness: 1,
+                  ),
+                  Text(
+                    article.description,
+                    style: const TextStyle(fontSize: 18),
+                    textAlign: TextAlign.justify,
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
