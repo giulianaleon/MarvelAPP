@@ -61,9 +61,38 @@ class ModalCharacterDetails {
                   ),
                   Text(
                     article.description,
-                    style: const TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 13, color: Colors.black),
                     textAlign: TextAlign.justify,
-                  )
+                  ),
+                  const Divider(
+                    height: 20,
+                    thickness: 1,
+                  ),
+                  const Text(
+                    "Comics",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.justify,
+                  ),
+                  Text(
+                    article.comics[0],
+                    style: const TextStyle(fontSize: 12),
+                    textAlign: TextAlign.justify,
+                  ),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  const Text(
+                    "Series",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.justify,
+                  ),
+                  Text(
+                    article.series[0],
+                    style: const TextStyle(fontSize: 12),
+                    textAlign: TextAlign.justify,
+                  ),
                 ],
               ),
             ),

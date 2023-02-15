@@ -24,13 +24,14 @@ abstract class _CharacterStore with Store {
 
     characters.clear();
     characters.addAll(results.map((json) => Character.fromJson(json)));
+
   }
 
   @action
   Future<void> getCharacterById(int id) async {
     final Map<String, dynamic> data = await marvelApi.getCharacterById(id);
     final dynamic result = data['data']['results'][0];
-
     selectedCharacter = Character.fromJson(result);
+
   }
 }

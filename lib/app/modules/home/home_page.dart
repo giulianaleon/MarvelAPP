@@ -80,7 +80,6 @@ class _CharactersPageState extends State<CharactersPage> {
                                         child: Column(
                                           children: [
                                             Text(
-
                                               character.name,
                                               style: const TextStyle(
                                                 fontSize: 16,

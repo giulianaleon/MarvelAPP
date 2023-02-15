@@ -8,7 +8,7 @@ class MarvelApi {
   final Dio _dio = Dio(BaseOptions(
     baseUrl: 'https://gateway.marvel.com/v1/public/',
   ));
-  final String _limit = '100';
+  final String _limit = '50';
 
   Future<Map<String, dynamic>> getCharacters() async {
     final Map<String, String> queryParameters = _buildQueryParameters();
