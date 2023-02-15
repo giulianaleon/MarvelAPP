@@ -1,6 +1,6 @@
-# marvel
+# MARVELAPP
 
-MarvelAPP using API
+MarvelAPP using API marvel: https://developer.marvel.com/documentation/getting_started
 
 ## Getting Started
 
